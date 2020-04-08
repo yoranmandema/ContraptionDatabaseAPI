@@ -1,19 +1,9 @@
-import express from 'express';
-import { rootHandler, helloHandler } from './handlers';
-import * as dotenv from 'dotenv';
+import { App } from './app'
+import { connect } from './database'
 
-dotenv.config();
+async function main() {
+    const app = new App();
+    await app.listen();
+}
 
-const app = express();
-
-console.log(process.env.PORT);
- 
-const port = process.env.PORT || '8000';
-
-app.get('/', rootHandler);
-app.get('/hello/:name', helloHandler);
-
-app.listen(port, err => {
-  if (err) return console.error(err);
-  return console.log(`Server is listening on ${port}`);
-});
+main();
