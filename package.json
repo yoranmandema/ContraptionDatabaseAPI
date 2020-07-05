@@ -1,0 +1,23 @@
+{
+  "name": "ContraptionDatabase",
+  "version": "1.0.0",
+  "description": "Garry's Mod Creation Database",
+  "main": "app.js",
+  "repository": "https://github.com/yoranmandema/ContraptionDatabaseAPI.git",
+  "author": "Yoran Mandema <yoranmandema@eml.cc>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/mongoose": "^5.7.29",
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.21"
+  },
+  "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/app.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
+  }
+}
